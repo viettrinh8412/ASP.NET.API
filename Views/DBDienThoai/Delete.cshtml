@@ -1,0 +1,79 @@
+﻿@model DanhBaDienThoai.Models.ThongTinLienHe
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3>Bạn có thực sự muốn xóa?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label class="control-label" for="ID">ID</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+
+        <dt>
+            <label class="control-label" for="HoTen">Họ và tên</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            <label class="control-label" for="BietDanh">Biệt danh</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BietDanh)
+        </dd>
+
+        <dt>
+            <label class="control-label" for="NgaySinh">Ngày sinh</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+
+        <dt>
+            <label class="control-label" for="SoDienThoai">Số điện thoại</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoDienThoai)
+        </dd>
+
+        <dt>
+            <label class="control-label" for="Email">Email</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            <label class="control-label" for="DiaChi">Địa chỉ</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

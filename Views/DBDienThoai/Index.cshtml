@@ -1,0 +1,71 @@
+﻿<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+@model IEnumerable<DanhBaDienThoai.Models.ThongTinLienHe>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Danh bạ điện thoại</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-striped"" >
+    <tr>
+        <th>
+            Họ và tên
+        </th>
+        <th>
+            Biệt danh
+        </th>
+        <th>
+            Ngày sinh
+        </th>
+        <th>
+            Số điện thoại
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Địa chỉ
+        </th>
+        <th>
+            Thao tác
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BietDanh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem =>  item.NgaySinh)
+            </td>
+            <td>
+                <a href="tel:@Html.DisplayFor(modelItem => item.SoDienThoai)">@Html.DisplayFor(modelItem => item.SoDienThoai)</a>
+            </td>
+            <td>
+                <a href="mailto:@Html.DisplayFor(modelItem => item.Email)">@Html.DisplayFor(modelItem => item.Email)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
